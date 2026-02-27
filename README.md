@@ -1,96 +1,82 @@
-📚 Book Social Network – Backend
-📌 Overview
+# 📚 Book Social Network – Backend
 
-Book Social Network is a secure RESTful backend application built with
-Spring Boot 3 and
-Spring Security 6.
+## 📌 Overview
+
+**Book Social Network** is a secure RESTful backend application built with  
+**Spring Boot 3** and **Spring Security 6**.
 
 It provides a robust API that allows users to manage their book collections and interact within a community of book enthusiasts.
 
-Class Diagram:
-<img src="assets/class-diagram.png" alt="Book Cover" width="200"/>
+### Class Diagram
+
+<img src="assets/class-diagram.png" alt="Class Diagram" width="400"/>
+
 The backend is responsible for:
 
-User registration and authentication
+- User registration and authentication
+- Secure email verification
+- Book management (create, update, share, archive)
+- Book borrowing and return workflow
+- Approval process for returned books
+- JWT-based security
+- REST API best practices implementation
 
-Secure email verification
+---
 
-Book management (create, update, share, archive)
+## 🛠️ Tech Stack
 
-Book borrowing and return workflow
+- Java 17+
+- Spring Boot 3
+- Spring Security 6
+- MySQL
+- JPA / Hibernate
+- JWT Authentication
+- Maven
+- RESTful API Architecture
 
-Approval process for returned books
+---
 
-JWT-based security
-
-REST API best practices implementation
-
-🛠️ Tech Stack
-
-Java 17+
-
-Spring Boot 3
-
-Spring Security 6
-
-MySQL
-
-JPA / Hibernate
-
-JWT Authentication
-
-Maven
-
-RESTful API Architecture
-
-🔐 Security Implementation
+## 🔐 Security Implementation
 
 The application ensures security using:
 
-JWT Token-based Authentication
+- JWT Token-based Authentication
+- Email verification before account activation
+- Role-based authorization
+- Encrypted password storage (BCrypt)
+- Secure endpoint protection with Spring Security filters
 
-Email verification before account activation
+---
 
-Role-based authorization
+## 🚀 Core Features
 
-Encrypted password storage (BCrypt)
+### 👤 User Management
 
-Secure endpoint protection with Spring Security filters
+- Register new users
+- Email validation before activation
+- Login with JWT authentication
+- Update user profile information
 
-🚀 Core Features
-👤 User Management
+### 📚 Book Management
 
-Register new users
+- Create new books
+- Update book details
+- Archive books
+- Share books with the community
+- View available books
 
-Email validation before activation
+### 🔄 Borrowing System
 
-Login with JWT authentication
+- Borrow books (with availability validation)
+- Return borrowed books
+- Approve returned books
+- Prevent borrowing of unavailable books
 
-Update user profile information
+---
 
-📚 Book Management
+## 🗂️ Project Structure
 
-Create new books
-
-Update book details
-
-Archive books
-
-Share books with the community
-
-View available books
-
-🔄 Borrowing System
-
-Borrow books (with availability validation)
-
-Return borrowed books
-
-Approve returned books
-
-Prevent borrowing of unavailable books
-
-🗂️ Project Structure
+```text
 src/main/java/com/example/booksocialnetwork
 │
 ├── config
@@ -100,19 +86,4 @@ src/main/java/com/example/booksocialnetwork
 ├── entity
 ├── security
 └── exception
-⚙️ Database Configuration (MySQL)
-
-Update your application.yml file:
-
-spring:
-datasource:
-url: jdbc:mysql://localhost:3306/book_social_network
-username: your_username
-password: your_password
-jpa:
-hibernate:
-ddl-auto: update
-show-sql: true
-properties:
-hibernate:
-dialect: org.hibernate.dialect.MySQLDialect
+```
