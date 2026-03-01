@@ -2,6 +2,7 @@ package com.mahmoud.book.book;
 
 import org.springframework.stereotype.Service;
 
+import com.mahmoud.book.file.FileUtils;
 import com.mahmoud.book.history.BookTransactionHistory;
 
 @Service
@@ -30,6 +31,7 @@ public class BookMapper {
 				.archived(book.isArchived())
 				.shareable(book.isShareable())
 				.owner(book.getOwner().getFullName())
+				.cover(FileUtils.reeadFileFromFileLocation(book.getBookCover()))
 				.build();
 	}
 	public BorrowedBookResponse toBorrowedBookResponse(BookTransactionHistory bookTransactionHistory) {
